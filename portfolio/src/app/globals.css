@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
+/* Design tokens from Figma */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #f1f5f9;
+  --indigo: #6366f1;
+  --indigo-accent: #6366f1;
+  --cyan: #22d3ee;
+  --cyan-accent: #22d3ee;
+  --surface: #13131a;
+  --surface-hover: #1a1a2e;
+  --text-gray: #9ca3af;
+  --border-color: #27272a;
+  --radius: 0.5rem;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-indigo: var(--indigo);
+  --color-indigo-accent: var(--indigo-accent);
+  --color-cyan: var(--cyan);
+  --color-cyan-accent: var(--cyan-accent);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-text-gray: var(--text-gray);
+  --color-border: var(--border-color);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+* {
+  border-color: var(--border-color);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--indigo);
+}
+
+/* Grain texture overlay - applied via class */
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E");
+  background-repeat: repeat;
+  animation: grain 8s steps(10) infinite;
+}
+
+/* Cursor - hide default on desktop when custom cursor is shown */
+@media (min-width: 768px) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+}
+
+/* Focus ring for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 2px;
 }
