@@ -8,20 +8,20 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "madhav@berkeley.edu",
-    href: "mailto:madhav@berkeley.edu",
+    value: "madhavdonthula@berkeley.edu",
+    href: "mailto:madhavdonthula@berkeley.edu",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "madhavdonthula",
-    href: "https://linkedin.com/in/madhavdonthula",
+    value: "madhav-donthula",
+    href: "https://www.linkedin.com/in/madhav-donthula",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "madhavdonthula",
-    href: "https://github.com/madhavdonthula",
+    value: "MadhavDonthula",
+    href: "https://github.com/MadhavDonthula",
   },
 ];
 

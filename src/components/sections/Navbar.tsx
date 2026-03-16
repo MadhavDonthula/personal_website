@@ -71,7 +71,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="/resume.pdf"
+                href="/MadhavDonthula_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 border-2 border-accent text-accent rounded-full hover:bg-accent hover:text-white transition-all duration-300"
@@ -128,7 +128,7 @@ export function Navbar() {
             </motion.a>
           ))}
           <motion.a
-            href="/resume.pdf"
+            href="/MadhavDonthula_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 border-2 border-accent text-accent rounded-full hover:bg-accent hover:text-white transition-all duration-300 text-center"
