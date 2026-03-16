@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Madhav Donthula - Personal Portfolio
 
-## Getting Started
+A modern, animated personal portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Fonts:** Inter (body) + JetBrains Mono (code/labels) via next/font
+
+## Features
+
+- Custom dot cursor with spring hover animation
+- Indigo sweep page-load transition
+- Sticky frosted-glass navbar with hover underline animations
+- Mobile nav drawer with staggered link reveal
+- Hero section with typewriter animation (Software Engineer → Data Scientist → Product Builder → Founder)
+- Animated gradient orb with parallax mouse tracking
+- Scroll-reveal animations across all sections
+- About section with circular photo, bio, and count-up stat chips
+- Experience timeline with tech pills and award badges
+- Projects bento grid with hover effects
+- Skills section with grouped pill tags and float animations
+- Contact section with icon cards and floating-label form
+- Full SEO metadata, OG image config, sitemap, and robots.txt
+- Accessibility: aria labels, keyboard nav, reduced-motion support
+
+## Local Setup
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── layout.tsx      # Root layout with fonts and metadata
+│   ├── page.tsx        # Home page
+│   ├── globals.css     # Global styles and design tokens
+│   ├── robots.ts       # robots.txt
+│   └── sitemap.ts      # sitemap.xml
+├── components/
+│   ├── ui/             # Reusable UI components
+│   │   ├── CustomCursor.tsx
+│   │   ├── PageLoadTransition.tsx
+│   │   ├── Typewriter.tsx
+│   │   ├── HeroOrb.tsx
+│   │   └── RevealOnScroll.tsx
+│   └── sections/       # Page sections
+│       ├── Navbar.tsx
+│       ├── Hero.tsx
+│       ├── About.tsx
+│       ├── Experience.tsx
+│       ├── Projects.tsx
+│       ├── Skills.tsx
+│       ├── Contact.tsx
+│       └── Footer.tsx
+├── hooks/
+│   └── useScrollReveal.ts
+├── lib/
+│   └── utils.ts        # cn() for class merging
+└── constants/
+    └── animations.ts  # Animation duration, easing values
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Images
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Place images in `public/images/`:
 
-## Deploy on Vercel
+- `public/images/experience/` - Synopsys, Handbook, Guardian
+- `public/images/projects/` - Project screenshots
+- `public/images/og-image.png` - Open Graph image (1200x630)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Configured for Vercel. Add `vercel.json` is included. Deploy with:
+
+```bash
+vercel
+```

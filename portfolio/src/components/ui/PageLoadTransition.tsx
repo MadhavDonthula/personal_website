@@ -1,16 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ANIMATIONS } from "@/constants/animations";
 
 export function PageLoadTransition() {
   const [isComplete, setIsComplete] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsComplete(true), 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  if (shouldReduceMotion) return null;
 
   return (
     <motion.div

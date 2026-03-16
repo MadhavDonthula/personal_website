@@ -140,3 +140,18 @@ body {
   outline: 2px solid var(--indigo);
   outline-offset: 2px;
 }
+
+/* Reduced motion - respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .grain-overlay {
+    animation: none;
+  }
+}

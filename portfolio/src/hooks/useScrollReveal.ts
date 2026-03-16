@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { ANIMATIONS } from "@/constants/animations";
 
 interface UseScrollRevealOptions {
   once?: boolean;

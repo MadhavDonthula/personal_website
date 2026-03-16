@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { ANIMATIONS } from "@/constants/animations";
+import { motion, useReducedMotion } from "framer-motion";
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -33,6 +33,8 @@ export function CustomCursor() {
       document.body.classList.remove("custom-cursor-active");
     };
   }, []);
+
+  if (shouldReduceMotion) return null;
 
   return (
     <motion.div

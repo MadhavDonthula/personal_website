@@ -49,7 +49,7 @@ export function Navbar() {
               href="#"
               className="text-2xl font-bold text-indigo font-mono"
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.97 }}
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -70,7 +70,7 @@ export function Navbar() {
                   }}
                   className="relative text-foreground/80 hover:text-foreground transition-colors group py-2"
                   whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo group-hover:w-full transition-all duration-300" />
@@ -82,7 +82,7 @@ export function Navbar() {
                 rel="noopener noreferrer"
                 className="px-4 py-2 border-2 border-indigo text-indigo rounded-full hover:bg-indigo hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileTap={{ scale: 0.97 }}
               >
                 Resume ↗
               </motion.a>

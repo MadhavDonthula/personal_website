@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ANIMATIONS } from "@/constants/animations";
 
 interface TypewriterProps {
@@ -33,8 +33,11 @@ export function Typewriter({ roles }: TypewriterProps) {
         }, ANIMATIONS.duration.typewriter);
         return () => clearTimeout(timer);
       } else {
-        setIsDeleting(false);
-        setCurrentIndex((prev) => (prev + 1) % roles.length);
+        const timer = setTimeout(() => {
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % roles.length);
+        }, 0);
+        return () => clearTimeout(timer);
       }
     }
   }, [displayText, isDeleting, currentIndex, roles]);
