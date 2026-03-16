@@ -8,8 +8,8 @@ import Image from "next/image";
 const ROLES = [
   "Software Engineer",
   "Data Scientist",
-  "Product Builder",
   "Founder",
+  "Product Builder",
 ];
 
 export function Hero() {
@@ -25,7 +25,6 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Subtle top-left glow */}
       <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-accent/[0.04] rounded-full blur-3xl" />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 w-full relative z-10">
@@ -38,9 +37,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
-              {/* Glow behind photo */}
               <div className="absolute inset-0 rounded-3xl bg-accent/10 blur-2xl scale-110" />
-              {/* Photo container */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-border bg-surface">
                 {!imageError ? (
                   <Image
@@ -71,7 +68,7 @@ export function Hero() {
             >
               <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               <span className="text-accent text-xs font-medium font-mono tracking-wide">
-                Open to Summer 2026 opportunities
+                Open to Summer 2026 internships
               </span>
             </motion.div>
 
@@ -114,7 +111,7 @@ export function Hero() {
             >
               CS & Data Science @{" "}
               <span className="text-foreground font-medium">UC Berkeley</span> · Co-Founder,{" "}
-              <span className="text-accent font-medium">Guardian</span> · SWE Intern
+              <span className="text-accent font-medium">Guardian</span> · Regents&apos; &amp; Chancellor&apos;s Scholar
             </motion.p>
 
             <motion.div
@@ -138,7 +135,6 @@ export function Hero() {
               </button>
             </motion.div>
 
-            {/* Quick stats */}
             <motion.div
               className="flex gap-8 mt-10 pt-8 border-t border-border justify-center lg:justify-start"
               initial={{ opacity: 0 }}
@@ -147,8 +143,9 @@ export function Hero() {
             >
               {[
                 { label: "GPA", value: "3.8" },
-                { label: "Hackathon Wins", value: "2" },
-                { label: "Users Served", value: "500+" },
+                { label: "Hackathon 1st Places", value: "2" },
+                { label: "Competitors", value: "3,600+" },
+                { label: "Users", value: "500+" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="text-2xl font-bold text-foreground font-mono">{stat.value}</div>
@@ -160,7 +157,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
         initial={{ opacity: 0 }}

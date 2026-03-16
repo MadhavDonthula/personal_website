@@ -2,13 +2,14 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Trophy, Star } from "lucide-react";
+import { ArrowRight, Trophy, Star, Github } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
     title: "Guardian",
     description:
-      "AI-powered fraud detection platform that won 1st place at Cal Hacks 11.0. Real-time anomaly detection serving 500+ users with 99.9% uptime.",
+      "Real-time fraud detection platform built in 36 hours at Cal Hacks 11.0. Won 1st place among 3,600+ participants. Now Bright Data-backed, piloting with 2 community banks.",
     tech: [
       "Python",
       "TensorFlow",
@@ -18,7 +19,8 @@ const projects = [
       "Docker",
       "GCP",
     ],
-    link: "#",
+    github: "https://github.com/madhavdonthula/guardian",
+    devpost: "#",
     badge: "🏆 Cal Hacks 1st Place",
     image: "/images/projects/guardian.jpg",
     featured: true,
@@ -26,39 +28,31 @@ const projects = [
   {
     title: "Code Linguo",
     description:
-      "Intelligent language learning platform powered by AI. Adaptive curriculum that personalizes to each learner's pace and style.",
+      "AI speech tutoring platform serving 500+ learners. Processes 40,000+ audio samples via Whisper with real-time GPT-4 scoring, deployed on Kubernetes.",
     tech: [
       "TypeScript",
       "Next.js",
       "TailwindCSS",
       "OpenAI API",
-      "PostgreSQL",
-      "Vercel",
+      "Whisper",
+      "Kubernetes",
     ],
-    link: "#",
+    github: "https://github.com/madhavdonthula/code-linguo",
+    devpost: null,
     badge: null,
-    image: "/images/projects/code-linguo.jpg",
-    featured: false,
+    image: "/images/projects/codelinguo-1.png",
+    featured: true,
   },
   {
     title: "EduBill",
     description:
-      "Educational billing analytics platform that secured 1st place in a national datathon. Provides real-time insights into educational spending patterns.",
-    tech: ["React", "Node.js", "MongoDB", "D3.js", "Python", "Pandas"],
-    link: "#",
+      "Won 1st at UC Berkeley Datathon among 80+ teams. Maps 200+ federal bills to outcome data across 21,461 US colleges using 4 XGBoost models.",
+    tech: ["React", "Node.js", "MongoDB", "D3.js", "Python", "XGBoost"],
+    github: "https://github.com/madhavdonthula/edubill",
+    devpost: null,
     badge: "🏆 Datathon 1st Place",
     image: "/images/projects/edubill.jpg",
     featured: true,
-  },
-  {
-    title: "InferenceGate",
-    description:
-      "ML inference optimization platform for deploying models at scale with minimal latency.",
-    tech: ["Python", "PyTorch", "Kubernetes", "Redis", "gRPC"],
-    link: "#",
-    badge: null,
-    image: "/images/projects/inferencegate.jpg",
-    featured: false,
   },
 ];
 
@@ -103,23 +97,36 @@ export function Projects() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Building impactful products that solve real-world problems at scale
+            A few things I&apos;ve built and shipped.
           </motion.p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <motion.a
+            <motion.div
               key={project.title}
-              href={project.link}
-              className="group relative bg-gradient-to-br from-surface to-surface/50 border-2 border-border rounded-3xl overflow-hidden hover:border-accent/50 transition-all duration-300"
+              className={`group relative bg-gradient-to-br from-surface to-surface/50 border-2 border-border rounded-3xl overflow-hidden hover:border-accent/50 transition-all duration-300 ${
+                index === 0 ? "md:col-span-2" : ""
+              }`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent-dim opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
 
-              <div className="relative h-64 md:h-80 overflow-hidden bg-accent/20">
+              <div className="relative h-64 md:h-80 overflow-hidden bg-accent/10">
+                {project.image.includes("codelinguo") || project.image.includes("guardian") || project.image.includes("edubill") ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.style.display = "none";
+                    }}
+                  />
+                ) : null}
                 <div className="w-full h-full flex items-center justify-center text-6xl font-bold text-accent">
                   {project.title.charAt(0)}
                 </div>
@@ -150,15 +157,50 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center gap-3 text-accent font-medium group-hover:gap-5 transition-all">
-                  <span className="font-mono">View →</span>
-                  <ArrowRight
-                    size={20}
-                    className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
-                  />
+                <div className="flex items-center gap-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-accent font-medium hover:text-foreground transition-colors font-mono"
+                  >
+                    <Github size={18} />
+                    <span>GitHub</span>
+                  </a>
+                  {project.devpost && (
+                    <a
+                      href={project.devpost}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-accent font-medium hover:text-foreground transition-colors font-mono"
+                    >
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M6.002 1.61L0 12.004L6.002 22.39h11.996L24 12.004L17.998 1.61H6.002zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31 0 4.436-3.21 6.302-6.456 6.302H7.595V5.694zm2.517 2.449v7.714h1.241c2.646 0 3.862-1.55 3.862-3.861.009-2.569-1.096-3.853-3.767-3.853h-1.336z" />
+                      </svg>
+                      <span>Devpost</span>
+                    </a>
+                  )}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-auto flex items-center gap-3 text-accent font-medium group-hover:gap-5 transition-all"
+                  >
+                    <span className="font-mono">View →</span>
+                    <ArrowRight
+                      size={20}
+                      className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+                    />
+                  </a>
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>

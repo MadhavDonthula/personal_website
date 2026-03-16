@@ -6,30 +6,43 @@ import { Trophy, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    company: "Synopsys",
-    role: "Software Engineering Intern",
-    date: "Summer 2025",
+    company: "Guardian",
+    role: "Co-Founder",
+    date: "October 2024 – Present",
     description: [
-      "Developing high-performance backend services for semiconductor design automation tools",
-      "Building scalable data pipelines to process terabytes of design verification data",
-      "Implementing RESTful APIs and microservices architecture using Python and Go",
-      "Collaborating with cross-functional teams to deliver enterprise-grade software solutions",
+      "Won 1st place at Cal Hacks among 3,600+ participants — built full fraud detection platform in 36 hours",
+      "Deployed iOS push notifications via APNs dispatching fraud alerts within 200ms of detection",
+      "Containerized Django backend and PostgreSQL with Docker, standardizing the dev environment",
+      "Piloting with 2 community banks, processing live transaction feeds across 10,000+ accounts",
     ],
-    tech: ["Python", "Go", "PostgreSQL", "Docker", "Kubernetes", "AWS"],
+    tech: ["Python", "Django", "PostgreSQL", "Docker", "Swift", "TensorFlow", "GCP"],
+    image: "/images/experience/guardian.jpg",
+    badge: "🏆 Cal Hacks 1st Place",
+  },
+  {
+    company: "Synopsys",
+    role: "ML Systems Engineering Intern",
+    date: "December 2025 – Present",
+    description: [
+      "Built a React + Django dashboard surfacing real-time ML outputs across 50+ hardware benchmarks for chip design engineers",
+      "Built end-to-end ML inference pipelines for chip power prediction, reducing simulation costs by 10x",
+      "Enforced GitHub PR review workflow with branch protection across a 3-engineer team",
+    ],
+    tech: ["Python", "React", "Django", "XGBoost", "Docker", "PostgreSQL"],
     image: "/images/experience/synopsys.jpg",
     badge: null as string | null,
   },
   {
     company: "Handbook",
     role: "Software Engineering Intern",
-    date: "Jan 2025 - Present",
+    date: "January 2026 – Present",
     description: [
-      "Built full-stack features for a collaborative knowledge management platform",
-      "Implemented real-time collaboration features using WebSockets and React",
-      "Optimized database queries reducing page load times by 40%",
-      "Developed RESTful APIs and integrated third-party services",
+      "Led development of an AI workflow automation platform with Slack and Teams integration, deployed across 4 enterprise clients",
+      "Wrote 40+ pytest unit tests achieving 100% coverage across 3 core REST endpoints",
+      "Resolved a critical XSS vulnerability by refactoring the email preview input sanitization pipeline",
+      "Built an automated email outreach system in Node.js + SendGrid scaling to 500+ contacts",
     ],
-    tech: ["React", "TypeScript", "Node.js", "MongoDB", "Redis", "WebSockets"],
+    tech: ["React", "TypeScript", "Node.js", "Python", "SendGrid", "Slack API"],
     image: "/images/experience/handbook.jpg",
     badge: null as string | null,
   },
@@ -74,7 +87,7 @@ export function Experience() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            From startups to enterprise — building impactful software at scale
+            Where I&apos;ve worked.
           </motion.p>
         </div>
 

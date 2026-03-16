@@ -5,10 +5,10 @@ import { motion, useInView } from "framer-motion";
 import { Award, Code2, Rocket, Users } from "lucide-react";
 
 const stats = [
-  { label: "Hackathon competitors defeated", value: 3600, suffix: "+", icon: Award },
-  { label: "Datathon 1st Places", value: 2, suffix: "", icon: Code2 },
-  { label: "Platform users", value: 500, suffix: "+", icon: Users },
-  { label: "GPA", value: 3.8, suffix: "", isDecimal: true, icon: Rocket },
+  { label: "Competitors at Cal Hacks", value: 3600, suffix: "+", icon: Award },
+  { label: "Hackathon 1st Places", value: 2, suffix: "", icon: Code2 },
+  { label: "Users across live platforms", value: 500, suffix: "+", icon: Users },
+  { label: "GPA — Regents' & Chancellor's Scholar", value: 3.8, suffix: "", isDecimal: true, icon: Rocket },
 ];
 
 function CountUpStat({
@@ -77,37 +77,34 @@ export function About() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <p className="text-text-gray text-lg md:text-xl leading-relaxed">
-              I&apos;m{" "}
-              <span className="text-foreground font-semibold">Madhav Donthula</span>, a
-              junior at{" "}
+              I&apos;m a junior at{" "}
               <span className="text-accent font-semibold">UC Berkeley</span> studying
-              Computer Science and Data Science with a{" "}
-              <span className="text-accent font-semibold">3.8 GPA</span>. I&apos;m
-              passionate about building scalable systems that solve real-world problems.
+              Computer Science and Data Science, recognized as a{" "}
+              <span className="text-foreground font-semibold">
+                Regents&apos; and Chancellor&apos;s Scholar
+              </span>{" "}
+              — awarded to the top 1% of applicants.
             </p>
             <p className="text-text-gray text-lg md:text-xl leading-relaxed">
-              As Co-Founder of{" "}
-              <span className="text-accent font-semibold">Guardian</span>, a fraud
-              detection platform that won{" "}
-              <span className="text-yellow-500 font-semibold">1st place at Cal Hacks 11.0</span>,
-              I&apos;ve experienced firsthand the impact of combining technical excellence
-              with product vision. Our platform now serves{" "}
-              <span className="text-accent font-semibold">500+ users</span> in production.
+              I started{" "}
+              <span className="text-accent font-semibold">Guardian</span> after getting
+              scammed at 14. It won{" "}
+              <span className="text-yellow-500 font-semibold">
+                1st place at Cal Hacks 11.0
+              </span>{" "}
+              among 3,600+ participants and is now Bright Data-backed, piloting with 2
+              community banks across 10,000+ accounts.
             </p>
             <p className="text-text-gray text-lg md:text-xl leading-relaxed">
-              Currently, I&apos;m working as a{" "}
-              <span className="text-foreground font-semibold">Software Engineering Intern</span>,
-              where I focus on building robust backend systems and data pipelines. I&apos;ve
-              also secured top positions in multiple datathons, competing against{" "}
-              <span className="text-accent font-semibold">thousands of participants</span>.
+              Outside of Guardian, I&apos;m a SWE Intern at{" "}
+              <span className="text-accent font-semibold">Handbook</span> (SkyDeck-backed)
+              and an ML Systems Engineer at{" "}
+              <span className="text-accent font-semibold">Synopsys</span>, building
+              XGBoost-based prediction tooling for hardware engineering teams.
             </p>
             <p className="text-text-gray text-lg md:text-xl leading-relaxed">
-              I&apos;m always looking for opportunities to work on challenging problems at
-              the intersection of{" "}
-              <span className="text-accent font-semibold">
-                software engineering, data science, and product development
-              </span>
-              .
+              I care about building things that actually work — fast, reliable, and useful
+              to real people.
             </p>
           </motion.div>
         </div>
