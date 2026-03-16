@@ -181,22 +181,6 @@ export function Experience() {
                         ))}
                       </div>
                     </div>
-
-                    <div className="md:w-64 flex-shrink-0">
-                      <motion.div
-                        className="relative w-full aspect-video rounded-xl overflow-hidden bg-accent/20"
-                        whileHover={{
-                          rotateX: 5,
-                          rotateY: 5,
-                          transition: { duration: 0.3 },
-                        }}
-                        style={{ transformStyle: "preserve-3d" }}
-                      >
-                        <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-accent">
-                          {exp.company.charAt(0)}
-                        </div>
-                      </motion.div>
-                    </div>
                   </div>
                 </div>
               </motion.div>
