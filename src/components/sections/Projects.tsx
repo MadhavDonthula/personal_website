@@ -11,8 +11,8 @@ const projects = [
     description:
       "Real-time fraud detection platform built in 36 hours at Cal Hacks 11.0. Won 1st place among 3,600+ participants. Now Bright Data-backed, piloting with 2 community banks.",
     tech: ["Python", "TensorFlow", "FastAPI", "React", "PostgreSQL", "Docker", "GCP"],
-    github: "https://github.com/madhavdonthula/guardian",
-    devpost: "#",
+    github: "https://github.com/aryan-gupta123/Guardian",
+    devpost: "https://devpost.com/software/guardian-ai-powered-fraud-prevention-for-your-money",
     video: "https://youtu.be/dWRFXnRT234",
     badge: "Cal Hacks 1st Place",
     images: [
@@ -26,7 +26,7 @@ const projects = [
     description:
       "AI speech tutoring platform serving 500+ learners. Processes 40,000+ audio samples via Whisper with real-time GPT-4 scoring, deployed on Kubernetes.",
     tech: ["TypeScript", "Next.js", "TailwindCSS", "OpenAI API", "Whisper", "Kubernetes"],
-    github: "https://github.com/madhavdonthula/code-linguo",
+    github: "https://github.com/MadhavDonthula/Learn_Linguo",
     devpost: null,
     video: null,
     badge: null,
