@@ -46,8 +46,8 @@ export function CustomCursor() {
       }}
     >
       <motion.div
-        className="w-3 h-3 rounded-full bg-indigo"
-        animate={{ scale: isHovering ? 1.5 : 1 }}
+        className="w-3 h-3 rounded-full bg-accent"
+        animate={{ scale: isHovering ? 1.2 : 1 }}
         transition={{
           type: "spring",
           stiffness: 400,

@@ -84,7 +84,8 @@ src/
 
 Place images in `public/images/` (create subdirs as needed):
 
-- `public/images/experience/` - Synopsys, Handbook, Guardian
+- `public/images/hero/face.jpg` - Your photo for the hero section
+- `public/images/experience/` - Synopsys, Handbook
 - `public/images/projects/` - Project screenshots
 - `public/images/og-image.png` - Open Graph image (1200x630)
 

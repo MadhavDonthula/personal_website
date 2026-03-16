@@ -17,7 +17,7 @@ export function PageLoadTransition() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo to-cyan z-[60]"
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent-dim z-[60]"
       initial={{ scaleX: 0 }}
       animate={{ scaleX: isComplete ? 1 : 0 }}
       transition={{

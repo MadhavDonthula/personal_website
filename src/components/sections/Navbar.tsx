@@ -6,9 +6,9 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
@@ -33,9 +33,7 @@ export function Navbar() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
+      <nav
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
@@ -45,11 +43,9 @@ export function Navbar() {
       >
         <div className="max-w-[1440px] mx-auto px-6 md:px-20">
           <div className="flex items-center justify-between h-20">
-            <motion.a
+            <a
               href="#"
-              className="text-2xl font-bold text-indigo font-mono"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+              className="text-2xl font-bold text-accent font-mono"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,11 +53,11 @@ export function Navbar() {
               aria-label="Scroll to top"
             >
               MD
-            </motion.a>
+            </a>
 
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <motion.a
+                <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => {
@@ -69,23 +65,19 @@ export function Navbar() {
                     scrollToSection(item.href);
                   }}
                   className="relative text-foreground/80 hover:text-foreground transition-colors group py-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.97 }}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo group-hover:w-full transition-all duration-300" />
-                </motion.a>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300" />
+                </a>
               ))}
-              <motion.a
+              <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 border-2 border-indigo text-indigo rounded-full hover:bg-indigo hover:text-white transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
+                className="px-4 py-2 border-2 border-accent text-accent rounded-full hover:bg-accent hover:text-white transition-all duration-300"
               >
                 Resume ↗
-              </motion.a>
+              </a>
             </div>
 
             <button
@@ -97,7 +89,7 @@ export function Navbar() {
             </button>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
@@ -124,7 +116,7 @@ export function Navbar() {
                 e.preventDefault();
                 scrollToSection(item.href);
               }}
-              className="text-foreground/80 hover:text-indigo transition-colors text-lg"
+              className="text-foreground/80 hover:text-accent transition-colors text-lg"
               initial={{ opacity: 0, x: 20 }}
               animate={{
                 opacity: mobileMenuOpen ? 1 : 0,
@@ -139,7 +131,7 @@ export function Navbar() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 border-2 border-indigo text-indigo rounded-full hover:bg-indigo hover:text-white transition-all duration-300 text-center"
+            className="px-4 py-2 border-2 border-accent text-accent rounded-full hover:bg-accent hover:text-white transition-all duration-300 text-center"
             initial={{ opacity: 0, x: 20 }}
             animate={{
               opacity: mobileMenuOpen ? 1 : 0,
