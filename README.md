@@ -33,7 +33,7 @@ A modern, animated personal portfolio website built with Next.js 14, Tailwind CS
 # Install dependencies
 npm install
 
-# Run development server
+# Run development server (from repo root)
 npm run dev
 ```
 
@@ -82,7 +82,7 @@ src/
 
 ## Images
 
-Place images in `public/images/`:
+Place images in `public/images/` (create subdirs as needed):
 
 - `public/images/experience/` - Synopsys, Handbook, Guardian
 - `public/images/projects/` - Project screenshots
