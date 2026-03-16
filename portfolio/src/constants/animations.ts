@@ -14,9 +14,9 @@ export const ANIMATIONS = {
     typewriterPause: 2000,
   },
 
-  // Easing
+  // Easing - use [0.4, 0, 0.2, 1] for cubic-bezier equivalent
   easing: {
-    default: "cubic-bezier(0.4, 0, 0.2, 1)",
+    default: [0.4, 0, 0.2, 1] as [number, number, number, number],
     spring: { type: "spring" as const, stiffness: 300, damping: 30 },
     springGentle: { type: "spring" as const, stiffness: 100, damping: 20 },
   },
