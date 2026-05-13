@@ -68,7 +68,7 @@ export function Hero() {
             >
               <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               <span className="text-accent text-xs font-medium font-mono tracking-wide">
-                Open to Summer 2026 internships
+                Incoming SDE Intern @ AWS Lambda · Summer 2026
               </span>
             </motion.div>
 

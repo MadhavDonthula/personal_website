@@ -6,6 +6,17 @@ import { Trophy, Calendar } from "lucide-react";
 
 const experiences = [
   {
+    company: "Amazon Web Services",
+    role: "Incoming Software Development Engineer Intern, AWS Lambda",
+    date: "Summer 2026",
+    description: [
+      "Building internal tooling that streamlines function authoring and iteration workflows for serverless developers",
+    ],
+    tech: ["AWS", "Lambda", "Serverless"],
+    image: "/images/experience/aws.jpg",
+    badge: "Incoming" as string | null,
+  },
+  {
     company: "Guardian",
     role: "Co-Founder",
     date: "October 2024 – Present",
